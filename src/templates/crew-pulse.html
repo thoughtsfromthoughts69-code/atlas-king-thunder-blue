@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Crew Pulse</title>
+<style>
+  :root{--bg:#f3f6f8;--card:#fff;--ink:#173040;--muted:#617888;--teal:#1c8f8a;--line:#e6eef2}
+  *{box-sizing:border-box} html,body{margin:0;background:var(--bg);color:var(--ink);font-family:ui-sans-serif,system-ui,sans-serif}
+  header{padding:20px 18px 8px;display:flex;justify-content:space-between;align-items:end}
+  h1{margin:0;font-size:24px;letter-spacing:-.03em} .sub{color:var(--muted);font-size:13px}
+  .chips{display:flex;gap:8px;padding:12px 18px 4px;overflow:auto}
+  .chips button{border:0;background:#fff;border-radius:999px;padding:8px 14px;font-size:13px;color:var(--muted);min-height:40px}
+  .chips .on{background:#163447;color:#fff}
+  ul{list-style:none;margin:8px 16px 24px;padding:0;display:grid;gap:10px}
+  li{background:var(--card);border-radius:18px;padding:14px;display:flex;gap:12px;align-items:center;box-shadow:0 8px 24px rgba(23,48,64,.04)}
+  .av{width:44px;height:44px;border-radius:14px;display:grid;place-items:center;font-weight:700;color:#fff;flex-shrink:0}
+  .t1{background:#1c8f8a} .t2{background:#2c6d9a} .t3{background:#345c78} .t4{background:#0f3a48}
+  b{display:block;font-size:15px} span{font-size:12px;color:var(--muted)}
+  .tag{margin-left:auto;font-size:11px;padding:6px 10px;border-radius:999px;background:#e7f4f3;color:var(--teal);font-weight:650}
+  .late{background:#f8efe0;color:#9a6a22}
+</style>
+</head>
+<body>
+  <header>
+    <div><h1>Crew Pulse</h1><div class="sub">4 updates in the last hour</div></div>
+  </header>
+  <div class="chips">
+    <button class="on">All</button>
+    <button>Design</button>
+    <button>Build</button>
+    <button>Review</button>
+  </div>
+  <ul>
+    <li><div class="av t1">AL</div><div><b>Amina L.</b><span>Shipped the resource card · 12m</span></div><span class="tag">Done</span></li>
+    <li><div class="av t2">JK</div><div><b>Jonas K.</b><span>Moved health checks to live · 28m</span></div><span class="tag">Review</span></li>
+    <li><div class="av t3">MR</div><div><b>Mei R.</b><span>Blocked on preview tokens · 41m</span></div><span class="tag late">Hold</span></li>
+    <li><div class="av t4">TS</div><div><b>Theo S.</b><span>Started spatial layout pass · 1h</span></div><span class="tag">Active</span></li>
+  </ul>
+</body>
+</html>

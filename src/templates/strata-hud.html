@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Strata HUD</title>
+<style>
+  :root{--bg:#050b14;--line:#1c4a68;--text:#d9f4ff;--muted:#7ea8c0;--accent:#3ee0c4}
+  *{box-sizing:border-box} html,body{margin:0;height:100%;background:radial-gradient(800px 400px at 50% 120%, #12324a 0%, var(--bg) 55%);color:var(--text);font-family:ui-sans-serif,system-ui,sans-serif}
+  body{min-height:100dvh;padding:18px;display:grid;grid-template-rows:auto 1fr auto}
+  header,footer{display:flex;justify-content:space-between;align-items:center;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+  .frame{border:1px solid var(--line);border-radius:20px;display:grid;place-items:center;position:relative;overflow:hidden}
+  .frame:before,.frame:after{content:"";position:absolute;width:18px;height:18px;border:2px solid var(--accent)}
+  .frame:before{top:12px;left:12px;border-right:0;border-bottom:0}
+  .frame:after{bottom:12px;right:12px;border-left:0;border-top:0}
+  .core{text-align:center}
+  .core b{display:block;font-size:48px;letter-spacing:.08em;color:var(--accent)}
+  .core span{letter-spacing:.24em;text-transform:uppercase;font-size:11px;color:var(--muted)}
+  .meters{display:flex;gap:10px}
+  .m{background:rgba(14,32,48,.7);border:1px solid var(--line);border-radius:12px;padding:10px 12px;min-width:88px}
+  .m em{display:block;font-style:normal;font-size:16px;color:var(--text)}
+</style>
+</head>
+<body>
+  <header><span>Strata // HUD</span><span>Link 99.2</span></header>
+  <div class="frame">
+    <div class="core"><b>04:12</b><span>Objective window</span></div>
+  </div>
+  <footer>
+    <div class="meters">
+      <div class="m">Hull<em>86%</em></div>
+      <div class="m">Heat<em>Low</em></div>
+      <div class="m">Range<em>1.4km</em></div>
+    </div>
+  </footer>
+</body>
+</html>

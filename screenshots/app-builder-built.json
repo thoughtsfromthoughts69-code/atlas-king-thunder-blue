@@ -1,0 +1,38 @@
+{
+  "url": "http://127.0.0.1:8081/",
+  "viewports": {
+    "desktop": {
+      "width": 1280,
+      "height": 800,
+      "status": 200,
+      "title": "HTML TYPELESS IDE",
+      "hasCanvas": false,
+      "bodyTextLen": 308,
+      "bodyTextHash": "f27ff711d1c5ea344f6001ee61c4b48f1e524deafa3a3806d94f4ef25e3248ea",
+      "bodyTextPrefix": "812 HTML TYPELESS / AUTOMATION GAME ENGINE + UI/UX GRAPHIC DESIG",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-built.png"
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "title": "HTML TYPELESS IDE",
+      "hasCanvas": false,
+      "bodyTextLen": 308,
+      "bodyTextHash": "f27ff711d1c5ea344f6001ee61c4b48f1e524deafa3a3806d94f4ef25e3248ea",
+      "bodyTextPrefix": "812 HTML TYPELESS / AUTOMATION GAME ENGINE + UI/UX GRAPHIC DESIG",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-built-mobile.png"
+    }
+  },
+  "brandWarnings": [],
+  "authWarnings": [],
+  "verdictFile": "/workspace/screenshots/app-builder-built.json",
+  "divergesFromBaseline": false,
+  "baselineReasons": []
+}

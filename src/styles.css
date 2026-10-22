@@ -1,0 +1,237 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg: #050b18;
+  --color-bg-elevated: #071428;
+  --color-surface: #0c1b32;
+  --color-surface-2: #122844;
+  --color-fg: #e8f4ff;
+  --color-muted: #8aa3bb;
+  --color-subtle: #5c738c;
+  --color-primary: #3ee0c4;
+  --color-primary-hover: #62ead2;
+  --color-primary-fg: #04201c;
+  --color-steel: #6eb0dc;
+  --color-steel-deep: #2a6a9a;
+  --color-border: #1c3658;
+  --color-border-strong: #2d547c;
+  --color-danger: #ef7a7a;
+  --color-ok: #3ee0c4;
+  --font-sans: "Rajdhani", ui-sans-serif, system-ui, sans-serif;
+  --font-hud: "Orbitron", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --shadow-border: 0 0 0 1px rgba(232, 244, 255, 0.08);
+  --shadow-border-hover: 0 0 0 1px rgba(232, 244, 255, 0.14);
+}
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background: var(--color-bg);
+    color: var(--color-fg);
+  }
+  body {
+    margin: 0;
+    min-height: 100dvh;
+    background: var(--color-bg);
+    color: var(--color-fg);
+    font-family: var(--font-sans);
+    overflow-x: hidden;
+  }
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+  h1, h2, h3 {
+    text-wrap: balance;
+  }
+  p {
+    text-wrap: pretty;
+  }
+  input, textarea {
+    font-family: inherit;
+  }
+}
+
+.circuit-field {
+  background-color: var(--color-bg);
+  background-image:
+    radial-gradient(1200px 520px at 80% 10%, rgba(46, 130, 180, 0.22), transparent 60%),
+    radial-gradient(900px 480px at 10% 90%, rgba(62, 224, 196, 0.1), transparent 55%),
+    linear-gradient(180deg, rgba(8, 20, 40, 0.2), transparent 40%),
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 160 160'><g fill='none' stroke='%233ee0c4' stroke-opacity='0.12' stroke-width='1'><path d='M8 24h36v28h24'/><path d='M80 8v40h32v24'/><path d='M20 96h44v28h18'/><path d='M112 72h28v40h-16'/><circle cx='44' cy='24' r='2' fill='%233ee0c4' fill-opacity='0.4' stroke='none'/><circle cx='80' cy='48' r='2' fill='%236eb0dc' fill-opacity='0.45' stroke='none'/><circle cx='140' cy='112' r='2' fill='%233ee0c4' fill-opacity='0.35' stroke='none'/></g></svg>");
+  background-size: auto, auto, auto, 160px 160px;
+}
+
+.scanlines {
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent 0 2px,
+    rgba(5, 11, 24, 0.18) 2px 3px
+  );
+  opacity: 0.35;
+}
+
+.spatial-floor {
+  pointer-events: none;
+  position: absolute;
+  inset: auto 0 -18% 0;
+  height: 46%;
+  opacity: 0.22;
+  background-image:
+    linear-gradient(color-mix(in oklab, var(--color-primary) 28%, transparent) 1px, transparent 1px),
+    linear-gradient(90deg, color-mix(in oklab, var(--color-steel) 24%, transparent) 1px, transparent 1px);
+  background-size: 48px 48px;
+  transform: perspective(520px) rotateX(62deg);
+  mask-image: linear-gradient(to top, black 10%, transparent 85%);
+}
+
+.hud-line {
+  background: linear-gradient(
+    90deg,
+    transparent,
+    color-mix(in oklab, var(--color-steel) 45%, transparent),
+    transparent
+  );
+}
+
+.html-mark {
+  margin: 0;
+  font-family: var(--font-hud);
+  font-weight: 700;
+  font-size: clamp(4.8rem, 22vw, 11rem);
+  letter-spacing: -0.06em;
+  line-height: 0.82;
+  text-transform: uppercase;
+  user-select: none;
+}
+
+.html-mark-face {
+  background: linear-gradient(
+    165deg,
+    #f2fbff 0%,
+    #b9dff5 16%,
+    #5aa4d4 42%,
+    #2f7eb0 62%,
+    #3ee0c4 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  filter:
+    drop-shadow(0 1px 0 #08203a)
+    drop-shadow(1px 2px 0 #071828)
+    drop-shadow(2px 4px 0 #061320)
+    drop-shadow(3px 6px 0 #050f1c)
+    drop-shadow(4px 8px 0 #040c18)
+    drop-shadow(0 14px 22px rgba(8, 24, 48, 0.45));
+}
+
+.code-stage {
+  position: relative;
+  background-color: #07111f;
+  background-image:
+    linear-gradient(color-mix(in oklab, var(--color-steel) 10%, transparent) 1px, transparent 1px),
+    linear-gradient(90deg, color-mix(in oklab, var(--color-steel) 10%, transparent) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+.code-watermark {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  font-family: var(--font-hud);
+  font-size: clamp(2.4rem, 6vw, 4.2rem);
+  font-weight: 700;
+  line-height: 0.92;
+  letter-spacing: 0.02em;
+  text-align: center;
+  text-transform: uppercase;
+  color: color-mix(in oklab, var(--color-steel) 22%, transparent);
+}
+
+.preview-stage {
+  display: grid;
+  place-items: center;
+  background: linear-gradient(180deg, #1a4fa8 0%, #1636a0 42%, #1e2f8c 100%);
+}
+
+.preview-stage-label {
+  margin: 0;
+  font-family: var(--font-hud);
+  font-size: clamp(1.6rem, 4vw, 2.4rem);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #f4f8ff;
+}
+
+.template-thumb {
+  position: relative;
+  height: 10rem;
+  overflow: hidden;
+  border-radius: var(--radius-md);
+  background: #f5f8fa;
+}
+
+.template-thumb iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 250%;
+  height: 400%;
+  border: 0;
+  transform: scale(0.4);
+  transform-origin: top left;
+  pointer-events: none;
+}
+
+.phone-bezel {
+  background: linear-gradient(180deg, #1a2c44, #0b1728);
+  box-shadow: var(--shadow-border), 0 18px 40px rgba(0, 0, 0, 0.35);
+}
+
+@keyframes hud-spin {
+  to { transform: rotate(360deg); }
+}
+@keyframes rise-in {
+  from { opacity: 0; transform: translateY(12px); filter: blur(4px); }
+  to { opacity: 1; transform: translateY(0); filter: blur(0); }
+}
+
+.stagger-in > * {
+  animation: rise-in 500ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+.stagger-in > *:nth-child(1) { animation-delay: 40ms; }
+.stagger-in > *:nth-child(2) { animation-delay: 120ms; }
+.stagger-in > *:nth-child(3) { animation-delay: 200ms; }
+.stagger-in > *:nth-child(4) { animation-delay: 280ms; }
+.stagger-in > *:nth-child(5) { animation-delay: 360ms; }
+.stagger-in > *:nth-child(6) { animation-delay: 420ms; }
+
+.font-hud {
+  font-family: var(--font-hud);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .stagger-in > *,
+  .html-mark-face,
+  .scanlines {
+    animation: none !important;
+    filter: none;
+  }
+  .spatial-floor {
+    transform: none;
+    opacity: 0.08;
+  }
+}

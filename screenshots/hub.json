@@ -1,0 +1,36 @@
+{
+  "url": "http://127.0.0.1:8080/hub",
+  "viewports": {
+    "desktop": {
+      "width": 1280,
+      "height": 800,
+      "status": 200,
+      "title": "HTML TYPELESS IDE",
+      "hasCanvas": false,
+      "bodyTextLen": 641,
+      "bodyTextHash": "6a744ee80aa8df2fd146a3b36dd0c290c099ffe676bb41f8c773add6a0a011c2",
+      "bodyTextPrefix": "812 SPATIAL LIBRARY Image to code in 30 seconds Shoot a UI on An",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/hub.png"
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "title": "HTML TYPELESS IDE",
+      "hasCanvas": false,
+      "bodyTextLen": 641,
+      "bodyTextHash": "6a744ee80aa8df2fd146a3b36dd0c290c099ffe676bb41f8c773add6a0a011c2",
+      "bodyTextPrefix": "812 SPATIAL LIBRARY Image to code in 30 seconds Shoot a UI on An",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/hub-mobile.png"
+    }
+  },
+  "brandWarnings": [],
+  "authWarnings": [],
+  "verdictFile": "/workspace/screenshots/hub.json"
+}
